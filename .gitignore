@@ -1,1 +1,3 @@
 *.dmg
+*.sig
+.DS_Store
