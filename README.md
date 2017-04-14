@@ -30,7 +30,7 @@ If you want to use other http proxy, use `node updater.js -y [server] [port]`. F
 ## 2Do:
 
 - [ ] Costomize saving path
-- [ ] Install automatically
+- [ ] Verify Sig
 - [ ] Show download progress
 
 
