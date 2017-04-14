@@ -30,17 +30,27 @@ r({
     print('ERROR: ' + error)
   } else if (!error && response.statusCode === 200) {
     let $ = cheerio.load(html)
-    let downloadURL = 'https://github.com' + $('.release-timeline .release-body .release-downloads a').attr('href')
-    const splitURL = downloadURL.split('/')
+    const dmgURL = 'https://github.com' + $('.release-timeline .release-body .release-downloads a').attr('href')
+    const sigURL = dmgURL + '.sig'
+    const splitURL = dmgURL.split('/')
     const version = splitURL[splitURL.length - 2]
     print('Start Downloading: ' + version)
     // downloadURL = 'https://nodejs.org/api/process.html#process_process_cwd'
-    r(downloadURL, function (err) {
+    // dmg
+    r(dmgURL, function (err) {
       if (err) {
         print('ERROR: ' + err)
       } else {
-        print('Download Successful.\n' + process.cwd() + '/ShadowsocksX-NG-R8' + version + '.dmg')
+        print('Download Successful: ' + process.cwd() + '/ShadowsocksX-NG-R8_' + version + '.dmg\n')
       }
     }).pipe(fs.createWriteStream('./ShadowsocksX-NG-R8' + version + '.dmg'))
+    // sig
+    // r(sigURL, function (err) {
+    //   if (err) {
+    //     print('ERROR: ' + err)
+    //   } else {
+    //     print('Download Successful: ' + process.cwd() + '/ShadowsocksX-NG-R8_' + version + '.dmg.sig\n')
+    //   }
+    // }).pipe(fs.createWriteStream('./ShadowsocksX-NG-R8' + version + '.dmg.sig'))
   }
 })
