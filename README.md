@@ -1,7 +1,10 @@
 # ShadowsocksX-NG-R8-Updater
 A tool to get the latest version of ShadowsocksX-NG-R8.
 
-
+## Update
+### v1.1
+Adapted to ".zip" format.
+**Auto installation**.
 
 ## Usage
 
