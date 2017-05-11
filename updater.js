@@ -18,29 +18,29 @@ let port = process.argv[4] || '1087'
 // print({'proxy': proxy + ':' + port})
 let r
 
-function readSyncByRl(tips) {
-  tips = tips || '> ';
+function readSyncByRl (tips) {
+  tips = tips || '> '
 
   return new Promise((resolve) => {
     const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
-    });
+    })
 
     rl.question(tips, (answer) => {
-      rl.close();
-      resolve(answer.trim());
-    });
-  });
+      rl.close()
+      resolve(answer.trim())
+    })
+  })
 }
 
-function fsExistsSync(path) {
-    try{
-        fs.accessSync(path,fs.F_OK);
-    }catch(e){
-        return false;
-    }
-    return true;
+function fsExistsSync (path) {
+  try {
+    fs.accessSync(path, fs.F_OK)
+  } catch (e) {
+    return false
+  }
+  return true
 }
 
 if (proxy === '-n') {
@@ -61,16 +61,16 @@ r({
     print('ERROR: ' + error)
   } else if (!error && response.statusCode === 200) {
     let $ = cheerio.load(html)
-    const dmgURL = 'https://github.com' + $('.release-timeline .release-body .release-downloads a').attr('href')
-    print(dmgURL)
-    const sigURL = dmgURL + '.sig'
-    const splitURL = dmgURL.split('/')
+    const appURL = 'https://github.com' + $('.release-timeline .release-body .release-downloads a').attr('href')
+    print(appURL)
+    const sigURL = appURL + '.sig'
+    const splitURL = appURL.split('/')
     const version = splitURL[splitURL.length - 2]
     const fileName = splitURL[splitURL.length - 1]
     print('Start Downloading: ' + version)
     // downloadURL = 'https://nodejs.org/api/process.html#process_process_cwd'
     // dmg
-    r(dmgURL, function (err) {
+    r(appURL, function (err) {
       if (err) {
         print('ERROR: ' + err)
       } else {
