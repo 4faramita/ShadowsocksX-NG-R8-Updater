@@ -15,7 +15,6 @@ let print = console.log
 let proxy = process.argv[2] || '-y'
 let server = process.argv[3] || '127.0.0.1'
 let port = process.argv[4] || '1087'
-// print({'proxy': proxy + ':' + port})
 let r
 
 function readSyncByRl (tips) {
@@ -68,8 +67,7 @@ r({
     const version = splitURL[splitURL.length - 2]
     const fileName = splitURL[splitURL.length - 1]
     print('Start Downloading: ' + version)
-    // downloadURL = 'https://nodejs.org/api/process.html#process_process_cwd'
-    // dmg
+
     r(appURL, function (err) {
       if (err) {
         print('ERROR: ' + err)
@@ -93,8 +91,6 @@ r({
           child_process.exec(cmd)
           print('Moved to ~/Applications.')
         })
-        // child_process.exec('mkdir tmp && cd tmp && unzip ../*.zip && mv ShadowsocksX-NG-R8.app ~/Applicatiopns/ShadowsocksX-NG-R8.app && cd .. && rm tmp')
-        // print('Moved to ~/Applications. Please restart Shadowsocks-NG-R8.')
       }
     }).pipe(fs.createWriteStream('./' + version + '_' + fileName))
     // sig
