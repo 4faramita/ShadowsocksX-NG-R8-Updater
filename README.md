@@ -2,6 +2,10 @@
 A tool to get the latest version of ShadowsocksX-NG-R8.
 
 ## Update
+### v1.2
+Deal with both ".zip" and ".dmg".
+Automatical Installation.
+
 ### v1.1
 Adapted to ".zip" format.    
 
@@ -35,6 +39,9 @@ And then run it by
 
 And it will download the latest version of ShadowsocksX-NG-R8 to the same place of this script.
 
+### Automatical Installation
+
+When it tells you to close ShadowsocksX-NG, if you close it manually, ShadowsocksX-NG will open and start after installation; if you decided to ignore it, ShadowsocksX-NG will open after installation, but you will have to start it manually.
 
 
 ## Proxy
@@ -49,6 +56,8 @@ If you want to use another http proxy, use `node updater.js -y [server] [port]`.
 
 ## 2Do:
 
+- [X] Install Automatically
+- [X] Adapt to .zip and .dmg
 - [ ] Costomize saving path
 - [ ] Verify Sig
 - [ ] Show download progress
