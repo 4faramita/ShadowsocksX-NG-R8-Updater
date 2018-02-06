@@ -2,9 +2,15 @@
 A tool to get the latest version of ShadowsocksX-NG-R8.
 
 ## Update
+### v1.3
+Using the repo maintained by qinyuhang.
+Changed default setting to "no proxy".
+Changed proxy parameter from "-y" to "-p".
+Changed proxy server input pattern from "IP port" to "IP:port".
+
 ### v1.2
 Deal with both ".zip" and ".dmg".
-Automatical Installation.
+Automatic Installation.
 
 ### v1.1
 Adapted to ".zip" format.    
@@ -39,18 +45,16 @@ And then run it by
 
 And it will download the latest version of ShadowsocksX-NG-R8 to the same place of this script.
 
-### Automatical Installation
+### Automatic Installation
 
 When it tells you to close ShadowsocksX-NG, if you close it manually, ShadowsocksX-NG will open and start after installation; if you decided to ignore it, ShadowsocksX-NG will open after installation, but you will have to start it manually.
 
 
 ## Proxy
 
-I asume you use ShadowsocksX-NG-R8 already and opened "HTTP Proxy", so the script use http://127.0.0.1:1087 as a default proxy server.
+If you want to use a proxy, run `node updater.js -p`. I asume you are using ShadowsocksX-NG-R8 and have opened "HTTP Proxy", so the script use http://127.0.0.1:1087 as proxy server by default.
 
-If you do not want to use a proxy, use `node updater.js -n`;
-
-If you want to use another http proxy, use `node updater.js -y [server] [port]`. For example: `node updater.js -y 127.0.0.1 1087`. "http://" is added by default, no need to add manually.
+If you want to use a different HTTP proxy, use `node updater.js -p [server]:[port]`. For example: `node updater.js -p 127.0.0.1:1087`. Only support HTTP proxy now.
 
 
 
@@ -61,7 +65,6 @@ If you want to use another http proxy, use `node updater.js -y [server] [port]`.
 - [ ] Costomize saving path
 - [ ] Verify Sig
 - [ ] Show download progress
-- [ ] Port to Python
 
 
 
