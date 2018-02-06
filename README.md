@@ -1,6 +1,8 @@
 # ShadowsocksX-NG-R8-Updater
 A tool to get the latest version of ShadowsocksX-NG-R8.
 
+> Warning: This repo is no longer under maintenance. The whole Shadowsocks-R project including ShadowsocksX-NG-R8 is deleted.
+
 ## Update
 ### v1.3
 Using the repo maintained by qinyuhang.
